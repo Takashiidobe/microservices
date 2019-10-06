@@ -1,7 +1,7 @@
 use diesel;
 use diesel::prelude::*;
 use diesel::mysql::MysqlConnection;
-use super::schema::users;
+use super::super::schema::users;
 
 #[table_name = "users"]
 #[derive(Serialize, Deserialize, Identifiable, Queryable)]

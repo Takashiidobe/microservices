@@ -1,6 +1,6 @@
 use rocket_contrib::json::Json;
 use serde_json::{Value, json};
-use crate::api_key::{NewApiKey, ApiKey};
+use crate::{NewApiKey, ApiKey};
 use crate::db;
 
 #[get("/list")]

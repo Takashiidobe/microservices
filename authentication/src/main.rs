@@ -3,16 +3,17 @@
 #[macro_use] extern crate serde_derive;
 #[macro_use] extern crate diesel;
 
-mod user;
-mod api_key;
-
-pub mod schema;
-pub mod db;
+mod models;
+use models::{db, schema};
 
 mod controllers;
 use controllers::root_controller::*;
 use controllers::api_key_controller::*;
 use controllers::user_controller::*;
+
+mod records;
+use records::api_key::*;
+use records::user::*;
 
 fn main() {
     rocket::ignite()

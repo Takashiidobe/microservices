@@ -1,7 +1,7 @@
 use rocket_contrib::json::Json;
 use serde_json::{Value, json};
 use bcrypt::{hash, BcryptError, verify};
-use crate::user::*;
+use crate::{User, UpdateUser, NewUser};
 use crate::db;
 
 #[get("/list")]

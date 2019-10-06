@@ -1,7 +1,7 @@
 use diesel;
 use diesel::prelude::*;
 use diesel::mysql::MysqlConnection;
-use super::schema::api_keys;
+use super::super::schema::api_keys;
 
 #[table_name = "api_keys"]
 #[derive(Serialize, Deserialize, Identifiable, Queryable)]
