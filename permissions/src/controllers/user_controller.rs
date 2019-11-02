@@ -1,7 +1,6 @@
 use rocket_contrib::json::Json;
 use serde_json::{Value, json};
 use bcrypt::{hash, BcryptError, verify};
-use jsonwebtoken;
 use crate::{User, UpdateUser, NewUser};
 use crate::db;
 
@@ -43,7 +42,7 @@ pub fn sign_in(id: i32, data: Json<UpdateUser>, connection: db::Connection) -> J
     let user = User::read(id, &connection);
     let result = verify(data.password, &user.password);
     match result {
-        Ok(true) => Json(json!({ "success":  })),
+        Ok(true) => Json(json!({ "success": "succeeded" })),
         _ => Json(json!({ "failure": "didn't work" }))
     }
 }

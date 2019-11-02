@@ -8,8 +8,7 @@ use super::super::schema::users;
 pub struct User {
     pub id: i32,
     pub username: String,
-    pub password: String,
-    pub permissions: String
+    pub password: String
 }
 
 #[table_name = "users"]
